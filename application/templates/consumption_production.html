@@ -33,7 +33,7 @@
 {% endblock %}
 
 {% block js %}
-<script type = "text/javascript">let view_data_json = "{{view_data}}"</script>
+<script type = "text/javascript">let view_data_json = '{{view_data|tojson}}'</script>
 <script src="{{ url_for('static', filename='consumption_production.js') }}"></script>{% endblock %}
 {% block css %} <link rel="stylesheet" href="{{ url_for('static', filename='css/consumption_production.css') }}">{% endblock %}
 {% block consumptionproductionactive %}active{% endblock %}
