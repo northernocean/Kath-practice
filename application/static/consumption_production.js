@@ -1,19 +1,15 @@
-let data; 
-  //  //let data= view_data_json
-  // // console.log (view_data_json)
-  // d3.json ("data.json").then((json) =>
-  // {console.log (json);
-  //   data = json;
+let data = view_data_json;
+console.log(data); //This is a string that looks like JSON
 
-  // }
-  // );
-    const url = "/api/consumptionproduction"
+data = JSON.parse(view_data_json);
+console.log(data); // Now this is real JSON!! We are ready to use data.
+
+const url = "/api/consumptionproduction"
  
-  data = [{"state": "NSW", "financial_year": "2008-09", "energy_production_gwh": 72706, "energy_consumption_pj": 1594}, {"state": "NT", "financial_year": "2008-09", "energy_production_gwh": 2922, "energy_consumption_pj": 95}, {"state": "QLD", "financial_year": "2008-09", "energy_production_gwh": 64030, "energy_consumption_pj": 
-  1346}, {"state": "SA", "financial_year": "2008-09", "energy_production_gwh": 14793, "energy_consumption_pj": 357}, {"state": "TAS", "financial_year": "2008-09", "energy_production_gwh": 8597, "energy_consumption_pj": 114}, {"state": "VIC", "financial_year": "2008-09", "energy_production_gwh": 56751, "energy_consumption_pj": 1428}, {"state": "WA", "financial_year": "2008-09", "energy_production_gwh": 27725, "energy_consumption_pj": 917}, {"state": "NSW", "financial_year": "2009-10", "energy_production_gwh": 73501, "energy_consumption_pj": 1645}, {"state": "NT", "financial_year": "2009-10", "energy_production_gwh": 3267, "energy_consumption_pj": 94}, {"state": "QLD", "financial_year": "2009-10", "energy_production_gwh": 65404, "energy_consumption_pj": 1294}, {"state": "SA", "financial_year": "2009-10", "energy_production_gwh": 14132, "energy_consumption_pj": 344}, {"state": "TAS", "financial_year": "2009-10", "energy_production_gwh": 10015, "energy_consumption_pj": 114}, {"state": "VIC", "financial_year": "2009-10", "energy_production_gwh": 57107, "energy_consumption_pj": 1434}, {"state": "WA", "financial_year": "2009-10", "energy_production_gwh": 28852, "energy_consumption_pj": 906}, {"state": "NSW", "financial_year": "2010-11", "energy_production_gwh": 69947, 
-  "energy_consumption_pj": 1668}, {"state": "NT", "financial_year": "2010-11", "energy_production_gwh": 3091, "energy_consumption_pj": 100}, {"state": "QLD", "financial_year": "2010-11", "energy_production_gwh": 64187, "energy_consumption_pj": 1250}, {"state": "SA", "financial_year": "2010-11", "energy_production_gwh": 14436, "energy_consumption_pj": 343}, {"state": "TAS", "financial_year": "2010-11", "energy_production_gwh": 11577, "energy_consumption_pj": 114}, {"state": "VIC", "financial_year": "2010-11", "energy_production_gwh": 58399, "energy_consumption_pj": 1456}]
+  // data = [{"state": "NSW", "financial_year": "2008-09", "energy_production_gwh": 72706, "energy_consumption_pj": 1594}, {"state": "NT", "financial_year": "2008-09", "energy_production_gwh": 2922, "energy_consumption_pj": 95}, {"state": "QLD", "financial_year": "2008-09", "energy_production_gwh": 64030, "energy_consumption_pj": 
+  // 1346}, {"state": "SA", "financial_year": "2008-09", "energy_production_gwh": 14793, "energy_consumption_pj": 357}, {"state": "TAS", "financial_year": "2008-09", "energy_production_gwh": 8597, "energy_consumption_pj": 114}, {"state": "VIC", "financial_year": "2008-09", "energy_production_gwh": 56751, "energy_consumption_pj": 1428}, {"state": "WA", "financial_year": "2008-09", "energy_production_gwh": 27725, "energy_consumption_pj": 917}, {"state": "NSW", "financial_year": "2009-10", "energy_production_gwh": 73501, "energy_consumption_pj": 1645}, {"state": "NT", "financial_year": "2009-10", "energy_production_gwh": 3267, "energy_consumption_pj": 94}, {"state": "QLD", "financial_year": "2009-10", "energy_production_gwh": 65404, "energy_consumption_pj": 1294}, {"state": "SA", "financial_year": "2009-10", "energy_production_gwh": 14132, "energy_consumption_pj": 344}, {"state": "TAS", "financial_year": "2009-10", "energy_production_gwh": 10015, "energy_consumption_pj": 114}, {"state": "VIC", "financial_year": "2009-10", "energy_production_gwh": 57107, "energy_consumption_pj": 1434}, {"state": "WA", "financial_year": "2009-10", "energy_production_gwh": 28852, "energy_consumption_pj": 906}, {"state": "NSW", "financial_year": "2010-11", "energy_production_gwh": 69947, 
+  // "energy_consumption_pj": 1668}, {"state": "NT", "financial_year": "2010-11", "energy_production_gwh": 3091, "energy_consumption_pj": 100}, {"state": "QLD", "financial_year": "2010-11", "energy_production_gwh": 64187, "energy_consumption_pj": 1250}, {"state": "SA", "financial_year": "2010-11", "energy_production_gwh": 14436, "energy_consumption_pj": 343}, {"state": "TAS", "financial_year": "2010-11", "energy_production_gwh": 11577, "energy_consumption_pj": 114}, {"state": "VIC", "financial_year": "2010-11", "energy_production_gwh": 58399, "energy_consumption_pj": 1456}]
   
-  console.log (data);
   // set the dimensions and margins of the graph
   const margin = {top: 10, right: 30, bottom: 30, left: 60},
       width = 460 - margin.left - margin.right,

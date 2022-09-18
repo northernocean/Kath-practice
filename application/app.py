@@ -1,9 +1,9 @@
 import json
 from flask import Flask, jsonify, render_template
 from requests import session
-import sqlalchemy
-from sqlalchemy import inspect
-from sqlalchemy import create_engine
+#import sqlalchemy
+#from sqlalchemy import inspect
+#from sqlalchemy import create_engine
 import pandas as pd
 import psycopg2
 import sys
@@ -21,7 +21,6 @@ def getview(view_name):
         row = dict(zip(headings, array))
         d3_view.append(row)
     cur.close()
-    print(d3_view)
     return d3_view
 
 
@@ -36,8 +35,6 @@ def home():
 def consumptionproduction():
     view_name = "consumption_production"
     d3_view = getview(view_name)
-    d3_view = jsonify(d3_view)
-    print(d3_view)
     return render_template("consumption_production.html",view_data = d3_view)
 
 @app.route("/api/consumptionproduction")
